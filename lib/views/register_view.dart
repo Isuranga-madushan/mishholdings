@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hardwere/views/sign_in_view.dart';
 import 'package:hardwere/widget/text_input.dart';
 
 import '../widgets/drop_down.dart';
-
+import '../widgets/text_field.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({Key? key}) : super(key: key);
@@ -17,18 +18,15 @@ class _RegisterViewState extends State<RegisterView> {
   final TextEditingController _passwordController = TextEditingController();
   String _selectedRole = 'User';
   final List<String> _roleOptions = ['User', 'Admin', 'Guest'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffD5D7D5),
       body: Column(
-
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Spacer(
-            flex: 1,
-          ),
           Image.asset(
             'assets/images/reg_image.png',
             height: 100,
@@ -48,8 +46,8 @@ class _RegisterViewState extends State<RegisterView> {
               fontWeight: FontWeight.normal,
             ),
           ),
-          const SizedBox(
-            height: 10,
+           const SizedBox(
+            height: 25,
           ),
           CustomTextField(
             labelText: 'Enter your full name',
@@ -79,10 +77,6 @@ class _RegisterViewState extends State<RegisterView> {
           const SizedBox(
             height: 10,
           ),
-          const Spacer(
-            flex: 1,
-
-          SizedBox(height: 20,),
           CustomTextFieldWithDropdown(
             controller: _usernameController,
             labelText: 'Username',
@@ -93,6 +87,9 @@ class _RegisterViewState extends State<RegisterView> {
             onDropdownChanged: (newValue) {
               _selectedRole = newValue;
             },
+          ),
+          const SizedBox(
+            height: 10,
           ),
           Align(
               alignment: Alignment.center,
@@ -125,33 +122,24 @@ class _RegisterViewState extends State<RegisterView> {
               const SizedBox(
                 width: 5,
               ),
-              InkWell(onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SignInView()),
-                );
-              }, child: const Text("Sign in",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.red
-              ),))
+              InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignInView()),
+                    );
+                  },
+                  child: const Text(
+                    "Sign in",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.red),
+                  ))
             ],
           ),
           const SizedBox(
             height: 50,
           )
-
-          // Align(
-          //     alignment: Alignment.center,
-          //     child: ElevatedButton(onPressed: (){
-          //       Navigator.push(
-          //         context,
-          //         MaterialPageRoute(builder: (context) => SignInView()),
-          //       );
-          //     }, child: Text("Register"),
-          //       style: ElevatedButton.styleFrom(
-          //         backgroundColor: Colors.red, // Set your desired background color here
-          //       ),))
         ],
       ),
     );

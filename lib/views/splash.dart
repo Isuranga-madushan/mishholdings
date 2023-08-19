@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hardwere/views/register_view.dart';
 
 import '../widgets/text_field.dart';
 
 class Splash extends StatefulWidget {
-  const Splash({Key? key}) : super(key: key);
+   Splash({Key? key}) : super(key: key);
 
   @override
   State<Splash> createState() => _SplashState();
 }
-
 class _SplashState extends State<Splash> {
+  late bool _splitScreenMode;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,6 +19,9 @@ class _SplashState extends State<Splash> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+           SizedBox(
+            height: 100,
+          ),
           Image.asset(
             'assets/images/app_logo.png',
             height: 75,
