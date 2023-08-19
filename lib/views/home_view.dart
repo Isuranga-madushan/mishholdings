@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hardwere/views/sign_in_view.dart';
 
+import '../widgets/text_field.dart';
+
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
 
@@ -14,9 +16,10 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       backgroundColor: Color(0xffD5D7D5),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          const SizedBox(height: 50,),
           const Text(
             "Main Category",
             style: TextStyle(
@@ -24,17 +27,20 @@ class _HomeViewState extends State<HomeView> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          Align(
-              alignment: Alignment.center,
-              child: ElevatedButton(onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SignInView()),
-                );
-              }, child: Text("Home"),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red, // Set your desired background color here
-                ),))
+          const Text(
+            "Brows Main Category",
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.normal,
+            ),
+          ),
+          const SizedBox(height: 10,),
+          Center(
+            child: CustomTextField(
+              labelText: 'Search Category',
+              hintText: 'Search Category',
+            ),
+          ),
         ],
       ),
     );

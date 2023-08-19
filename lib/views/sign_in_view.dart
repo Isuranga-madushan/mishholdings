@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hardwere/views/details_screen.dart';
 import 'package:hardwere/views/register_view.dart';
 
 import '../widgets/text_field.dart';
@@ -64,7 +65,7 @@ class _SignInViewState extends State<SignInView> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => HomeView()),
+                        MaterialPageRoute(builder: (context) => const DetailsScreen()),
                       );
                     },
                     child: Text("Sign In"),
