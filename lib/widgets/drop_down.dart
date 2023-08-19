@@ -9,7 +9,7 @@ class CustomTextFieldWithDropdown extends StatefulWidget {
   final bool obscureText;
   final TextInputType keyboardType;
   final List<String> dropdownItems;
-  String selectedDropdownValue; // Not final
+  String selectedDropdownValue;
   final ValueChanged<String> onDropdownChanged;
 
   CustomTextFieldWithDropdown({
