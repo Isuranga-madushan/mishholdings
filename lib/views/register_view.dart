@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hardwere/views/sign_in_view.dart';
 
+import '../widgets/text_field.dart';
+
 class RegisterView extends StatefulWidget {
   const RegisterView({Key? key}) : super(key: key);
 
@@ -17,6 +19,17 @@ class _RegisterViewState extends State<RegisterView> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
+          CustomTextField(
+            labelText: 'Password',
+            hintText: 'Enter your password',
+
+          ),
+          SizedBox(height: 20,),
+          CustomTextField(
+            labelText: 'Password',
+            hintText: 'Enter your password',
+
+          ),
           Align(
               alignment: Alignment.center,
               child: ElevatedButton(onPressed: (){

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hardwere/views/register_view.dart';
 
+import '../widgets/text_field.dart';
+
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
 
@@ -49,7 +51,7 @@ class _SplashState extends State<Splash> {
                       backgroundColor: Colors.red, // Set your desired background color here
                     )
                 ),
-              ))
+              )),
         ],
       ),
     );
