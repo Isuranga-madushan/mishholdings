@@ -77,11 +77,10 @@ class _RegisterViewState extends State<RegisterView> {
           const SizedBox(
             height: 10,
           ),
-          CustomTextFieldWithDropdown(
+          CustomDropdownTextField(
             controller: _usernameController,
-            labelText: 'Username',
-            hintText: 'Enter your username',
-            keyboardType: TextInputType.emailAddress,
+            labelText: 'Select User Category',
+            hintText: 'Select a role',
             dropdownItems: _roleOptions,
             selectedDropdownValue: _selectedRole,
             onDropdownChanged: (newValue) {
