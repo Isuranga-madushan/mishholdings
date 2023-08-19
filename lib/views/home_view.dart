@@ -41,6 +41,7 @@ class _HomeViewState extends State<HomeView> {
               hintText: 'Search Category',
             ),
           ),
+          ListView()
         ],
       ),
     );
