@@ -15,8 +15,15 @@ class _HomeViewState extends State<HomeView> {
       backgroundColor: Color(0xffD5D7D5),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          const Text(
+            "Main Category",
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           Align(
               alignment: Alignment.center,
               child: ElevatedButton(onPressed: (){

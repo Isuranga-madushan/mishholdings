@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hardwere/views/register_view.dart';
 
 import '../widgets/text_field.dart';
@@ -46,12 +45,6 @@ class _SplashState extends State<Splash> {
               fontWeight: FontWeight.normal,
             ),
             textAlign: TextAlign.center,),
-          ),
-          const SizedBox(
-            height: 60,
-          ),
-          const Spacer(
-            flex: 1,
           ),
           Align(
             alignment: Alignment.center,
