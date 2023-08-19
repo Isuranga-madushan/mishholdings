@@ -34,15 +34,22 @@ class _SplashState extends State<Splash> {
           ),
           Align(
             alignment: Alignment.center,
-              child: ElevatedButton(onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => RegisterView()),
-                );
-              }, child: Text("Get Start"),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red, // Set your desired background color here
-                  )))
+              child: Center(
+                child: ElevatedButton(onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RegisterView()),
+                  );
+                }, child: Text("Get Start"),
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(300, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30), // Set your desired border radius
+                      ),
+                      backgroundColor: Colors.red, // Set your desired background color here
+                    )
+                ),
+              ))
         ],
       ),
     );
