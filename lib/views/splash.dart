@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hardwere/views/list_view.dart';
 import 'package:hardwere/views/register_view.dart';
 
 import '../widgets/text_field.dart';
@@ -59,7 +60,7 @@ class _SplashState extends State<Splash> {
                 child: ElevatedButton(onPressed: (){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => RegisterView()),
+                    MaterialPageRoute(builder: (context) => ItemListScreen()),
                   );
                 }, child: Text("Get Start"),
                     style: ElevatedButton.styleFrom(
