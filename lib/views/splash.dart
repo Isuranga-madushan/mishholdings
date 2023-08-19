@@ -28,11 +28,26 @@ class _SplashState extends State<Splash> {
             height: 200,
             width: 200,
           ),
-          Text("Gets Things Done With Ease!",
+          const Text("Gets Things Done With Ease!",
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
+          ),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(20, 30, 20, 30),
+            child: Text("Lorem ipsum dolor sit amet consectetur. Dictum pharetra eu consectetur nec enim sapien ornare gravida. Proin aliquet massa enim scelerisque feugiat scelerisque. Eros non at blandit sapien.",
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.normal,
+            ),
+            textAlign: TextAlign.center,),
+          ),
+          const SizedBox(
+            height: 60,
+          ),
+          const Spacer(
+            flex: 1,
           ),
           Align(
             alignment: Alignment.center,
@@ -52,6 +67,9 @@ class _SplashState extends State<Splash> {
                     )
                 ),
               )),
+          const SizedBox(
+            height: 50,
+          )
         ],
       ),
     );
