@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/list_view_item_view.dart';
-
 class Item {
   final String imageUrl;
   final String title;
@@ -10,12 +8,12 @@ class Item {
   Item({required this.imageUrl, required this.title, required this.subTitle});
 }
 
-class ItemListScreen extends StatefulWidget {
+class ItemListViewScreen extends StatefulWidget {
   @override
-  _ItemListScreenState createState() => _ItemListScreenState();
+  _ItemListViewScreenState createState() => _ItemListViewScreenState();
 }
 
-class _ItemListScreenState extends State<ItemListScreen> {
+class _ItemListViewScreenState extends State<ItemListViewScreen> {
   List<Item> items = [
     Item(
         imageUrl:
@@ -87,7 +85,7 @@ class _ItemListScreenState extends State<ItemListScreen> {
     return Scaffold(
       backgroundColor: Color(0xffD5D7D5),
       appBar: AppBar(
-        title: Text('Item List'),
+        title: Text('Item List tofsfjkbskf'),
       ),
       body: Column(
         children: [
@@ -98,11 +96,9 @@ class _ItemListScreenState extends State<ItemListScreen> {
               onChanged: _filterItems,
               decoration: InputDecoration(
                 suffixIcon: Icon(Icons.search),
-
                 filled: true,
                 fillColor: Colors.white,
                 border: OutlineInputBorder(
-
                   borderRadius: BorderRadius.circular(20),
                   borderSide: BorderSide.none,
                 ),
@@ -119,14 +115,16 @@ class _ItemListScreenState extends State<ItemListScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ItemListViewScreen(
+                        builder: (context) => ItemDetailScreen(
+                          item: filteredItems[index],
                         ),
                       ),
                     );
                   },
                   child: Container(
+                    height: 100,
                     margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                    padding: EdgeInsets.only(bottom: 10),
+                    padding: EdgeInsets.only(bottom: 0),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(0),
                       color: Colors.white,
@@ -139,43 +137,73 @@ class _ItemListScreenState extends State<ItemListScreen> {
                         ),
                       ],
                     ),
-                    child: Column(
+                    child: Row(
                       children: [
                         ClipRRect(
                           borderRadius: BorderRadius.circular(0),
                           child: Image.network(
                             filteredItems[index].imageUrl,
-                            height: 150,
-                            width: double.infinity,
-                            fit: BoxFit.cover,
+                            height: double.maxFinite,
+                            width: 130,
+                            fit: BoxFit.fitHeight,
                           ),
                         ),
-                        SizedBox(height: 10),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        Column(
+                         // mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.only(top: 5, left: 15),
                               child: Text(
                                 filteredItems[index].title,
                                 style: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 15,
-                                  fontWeight: FontWeight.normal,
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
                             ),
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: Padding(
-                                padding: const EdgeInsets.only(right: 8.0),
-                                child: Row(
-                                  children: const [
-                                    Icon(Icons.add_circle),
-                                    Text("100 +")
-                                  ],
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 15, bottom: 10),
+                              child: Text(
+                                filteredItems[index].subTitle,
+                                style: const TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w400,
                                 ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 15, bottom: 0),
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.location_on,
+                                    size: 15,
+                                  ),
+                                  Text("3.5 KM"),
+                                  const SizedBox(width: 20,),
+                                  ElevatedButton(
+                                      onPressed: () {
+                                        // Navigator.push(
+                                        //   context,
+                                        //   MaterialPageRoute(builder: (context) => ItemListScreen()),
+                                        // );
+                                      },
+                                      child: Text("View"),
+                                      style: ElevatedButton.styleFrom(
+                                        minimumSize: Size(50, 20),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(
+                                              30), // Set your desired border radius
+                                        ),
+                                        backgroundColor: Colors
+                                            .red, // Set your desired background color here
+                                      )),
+                                ],
                               ),
                             )
                           ],
